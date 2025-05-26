@@ -16,6 +16,16 @@ export type Education = {
   description: string;
 };
 
+export type Projects = {
+    name: string;
+    shortlabel: string;
+    startDate: string;
+    endDate: string;
+    description: string;
+    livelink: string;
+    github:string;
+  };
+
 export type Service = {
   name: string;
   description: string;
