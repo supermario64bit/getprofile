@@ -40,6 +40,7 @@ export type Work = {
   description?: string;
   images: string[];
   previewUrl: string;
+  github: string;
   publishedAt: string;
   featureList: string[];
   attributes: {

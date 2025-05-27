@@ -4,6 +4,7 @@ import { Work } from '@/types';
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FiGithub } from 'react-icons/fi';
 import Slider, { Settings } from 'react-slick';
 
 const settings: Settings = {
@@ -45,8 +46,18 @@ const WorkDetail: React.FunctionComponent<Props> = ({ work }) => {
             ))}
           </Slider>
           <div className="mt-6 flex justify-center">
-            <Link href={work.previewUrl}>
-              <a className="btn">Live Preview</a>
+            {work.previewUrl && (
+              <>
+                <Link href={work.previewUrl}>
+                  <a target="_blank" className="btn">Live Preview</a>
+                </Link>
+                &nbsp;&nbsp;&nbsp;
+              </>
+            )}
+            <Link href={work.github}>
+              <a className="btn" target="_blank">
+                <FiGithub size={25} /> &nbsp;Github
+              </a>
             </Link>
           </div>
         </div>

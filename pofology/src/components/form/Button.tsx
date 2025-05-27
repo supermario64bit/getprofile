@@ -1,15 +1,19 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-interface Props {
-  type?: 'button' | 'submit';
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: React.ReactNode;
+  type?: 'button' | 'submit';
 }
 
-const Button: React.FC<Props> = ({ type = 'submit', children, className }) => {
+const Button: React.FC<Props> = ({ type = 'submit', children, className, ...rest }) => {
   return (
-    <button type={type} className={classNames(['btn', className])}>
+    <button
+      type={type}
+      className={classNames('btn', className)}
+      {...rest} // spreads disabled, onClick, etc.
+    >
       {children}
     </button>
   );

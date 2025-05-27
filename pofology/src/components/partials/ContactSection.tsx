@@ -1,11 +1,51 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import Button from '@/components/form/Button';
 import Input from '@/components/form/Input';
 import TextArea from '@/components/form/Textarea';
 import SectionTitle from '@/components/shared/SectionTitle';
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSending, setIsSending] = useState(false);
+  const [alert, setAlert] = useState({ type: '', message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+    setAlert({ type: '', message: '' });
+
+    try {
+      await emailjs.send(
+        'service_dj29e34',
+        'template_jfaaqtc',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'YOUR_PUBLIC_KEY'
+      );
+      setAlert({ type: 'success', message: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      setAlert({ type: 'error', message: 'Failed to send message. Please try again later.' });
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <>
       <SectionTitle>Get In Touch</SectionTitle>
@@ -15,23 +55,52 @@ const ContactSection = () => {
           <h6 className="text-2xl font-bold">Let's talk about everything!</h6>
           <p className="mt-2">Don't like forms? Send me an email. 👋</p>
         </div>
-        <div className="col-span-2">
-          <div className="grid gap-8 md:grid-cols-2">
-            <Input placeholder="Your Name" />
-            <Input placeholder="Email Address" />
-          </div>
 
-          <div className="mt-8">
-            <Input placeholder="Subject" />
-          </div>
-          <div className="mt-8">
-            <TextArea placeholder="Message" />
-          </div>
-          <div className="mt-8">
-            <Button className="mt-5 bg-primary-500 px-8 font-semibold text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-200">
-              Send Message
-            </Button>
-          </div>
+        <div className="col-span-2">
+          {alert.message && (
+            <div
+              className={`mb-4 rounded px-4 py-3 text-sm ${
+                alert.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+              }`}
+            >
+              {alert.message}
+            </div>
+          )}
+          <form onSubmit={handleSubmit}>
+            <div className="grid gap-8 md:grid-cols-2">
+              <Input placeholder="Your Name" name="name" value={formData.name} onChange={handleChange} required />
+              <Input
+                placeholder="Email Address"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mt-8">
+              <Input placeholder="Subject" name="subject" value={formData.subject} onChange={handleChange} required />
+            </div>
+            <div className="mt-8">
+              <TextArea
+                placeholder="Message"
+                name="message"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mt-8">
+              <Button
+                className="mt-5 bg-primary-500 px-8 font-semibold text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-200"
+                type="submit"
+                disabled={isSending}
+              >
+                {isSending ? 'Sending...' : 'Send Message'}
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </>

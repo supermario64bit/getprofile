@@ -18,7 +18,12 @@ const HeroSection = () => {
         <div className="mt-2 flex gap-1">
           {' '}
           I'm a{' '}
-          <Typed strings={['Software Developer', 'Self Learner', 'Tech Enthusiast']} typeSpeed={60} backSpeed={30} loop />
+          <Typed
+            strings={['Software Developer', 'Self Learner', 'Tech Enthusiast']}
+            typeSpeed={60}
+            backSpeed={30}
+            loop
+          />
         </div>
         <div className="mt-4  flex gap-5">
           {/* <Link href="https://www.instragram.com">
@@ -27,7 +32,7 @@ const HeroSection = () => {
             </a>
           </Link> */}
           <Link href="https://www.linkedin.com/in/gokulsujan/">
-            <a className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
+            <a target="_blank" className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
               <FiLinkedin size={25} />
             </a>
           </Link>
@@ -37,17 +42,21 @@ const HeroSection = () => {
             </a>
             </Link> */}
           <Link href="https://www.github.com/gokulsujan">
-            <a className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
+            <a target="_blank" className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
               <FiGithub size={25} />
             </a>
           </Link>
           <Link href="https://www.twitter.com/GokulSujan5">
-            <a className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
+            <a target="_blank" className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
               <FiTwitter size={25} />
             </a>
           </Link>
         </div>
-        <Button className="mt-5 px-8">Hire Me</Button>
+        <a href="/contact">
+          <Button className="mt-5 px-8">
+            Hire Me
+          </Button>
+        </a>
       </div>
 
       <div className="absolute bottom-0 flex flex-col items-center ">

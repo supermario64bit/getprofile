@@ -33,9 +33,9 @@ const Home: NextPage = () => {
       <section className="container py-16">
         <TestimonialSection />
       </section>
-      <section className="container py-16">
+      {/* <section className="container py-16">
         <BlogSection />
-      </section>
+      </section> */}
       <section className="container py-16">
         <ContactSection />
       </section>
