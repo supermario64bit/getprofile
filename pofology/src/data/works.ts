@@ -88,7 +88,7 @@ export const works: Work[] = [
     id: 3,
     title: 'Quiz App',
     category: 'Full Stack Web App',
-    thumbnailUrl: '/images/works/marketplace-website.png',
+    thumbnailUrl: '/images/works/quizapp_thubnail.png',
     description: `QuizApp is a web-based quiz application built using Go (Gin-Gonic) that allows admins to create and manage quizzes with ease. Admins can add questions, define correct answers, and launch timed quizzes. Participants receive a randomized set of questions to ensure fairness and reduce cheating. The app supports real-time quiz participation, scoring, and result tracking — ideal for online tests, competitions, or internal assessments.`,
     publishedAt: '01 July 2022',
     images: [],
