@@ -3,6 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import Slider, { Settings } from 'react-slick';
 import SectionTitle from '../shared/SectionTitle';
+import Link from 'next/link';
+import { FiLinkedin } from 'react-icons/fi';
 
 const reviewSettings: Settings = {
   dots: true,
@@ -16,7 +18,7 @@ const reviewSettings: Settings = {
 const Testimonial = () => {
   return (
     <>
-      <SectionTitle>Client Reviews</SectionTitle>
+      <SectionTitle>Voices I've Worked With</SectionTitle>
       <div className="mt-16">
         <Slider {...reviewSettings}>
           {reviews.map((review, index) => (
@@ -25,7 +27,22 @@ const Testimonial = () => {
                 <div className="h-24 w-24 rounded-full">
                   <Image src={review.author.imageUrl} height={100} width={100} alt={review.author.name} />
                 </div>
-                <h6 className="mt-3 text-lg font-semibold">{review.author.name}</h6>
+                <h6 className="mt-3 flex items-center gap-2 text-lg font-semibold">
+                  {review.author.name}
+                  {review.author.linkdin && (
+                    <Link
+                      href={review.author.linkdin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      <a target="_blank">
+                        <FiLinkedin size={18} />
+                      </a>
+                    </Link>
+                  )}
+                </h6>
+
                 <p className="text-sm text-gray-400 dark:text-gray-200">
                   {review.author.designation} at {review.author.company}.
                 </p>
