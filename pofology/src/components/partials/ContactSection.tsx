@@ -15,6 +15,9 @@ const ContactSection = () => {
   });
   const [isSending, setIsSending] = useState(false);
   const [alert, setAlert] = useState({ type: '', message: '' });
+  const EMAIL_JS_SERVICE_ID: string = process.env.EMAIL_JS_SERVICE_ID!;
+  const EMAIL_JS_TEMPLATE_ID: string = process.env.EMAIL_JS_TEMPLATE_ID!;
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,21 +29,23 @@ const ContactSection = () => {
     setAlert({ type: '', message: '' });
 
     try {
+      const now = new Date();
       await emailjs.send(
-        'service_dj29e34',
-        'template_jfaaqtc',
+        EMAIL_JS_SERVICE_ID,
+        EMAIL_JS_TEMPLATE_ID,
         {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
+          "name": formData.name + ' - ' + formData.email,
+          "email": 'hello@gokulsujan.com',
+          "title": formData.subject,
+          "message": formData.message,
+          "time": `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`,
         },
-        'YOUR_PUBLIC_KEY'
+        'Mpk3WVp3AgiW5BKaL'
       );
       setAlert({ type: 'success', message: 'Message sent successfully!' });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      setAlert({ type: 'error', message: 'Failed to send message. Please try again later.' });
+      setAlert({ type: 'error', message: 'Failed to send message. Please try again later. Error' + error });
     } finally {
       setIsSending(false);
     }
