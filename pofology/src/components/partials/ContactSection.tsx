@@ -5,6 +5,7 @@ import Button from '@/components/form/Button';
 import Input from '@/components/form/Input';
 import TextArea from '@/components/form/Textarea';
 import SectionTitle from '@/components/shared/SectionTitle';
+import { title } from 'process';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -15,9 +16,6 @@ const ContactSection = () => {
   });
   const [isSending, setIsSending] = useState(false);
   const [alert, setAlert] = useState({ type: '', message: '' });
-  const EMAIL_JS_SERVICE_ID: string = process.env.EMAIL_JS_SERVICE_ID!;
-  const EMAIL_JS_TEMPLATE_ID: string = process.env.EMAIL_JS_TEMPLATE_ID!;
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,14 +29,14 @@ const ContactSection = () => {
     try {
       const now = new Date();
       await emailjs.send(
-        EMAIL_JS_SERVICE_ID,
-        EMAIL_JS_TEMPLATE_ID,
+        'service_vvfpggf',
+        'template_ve16uxg',
         {
-          "name": formData.name + ' - ' + formData.email,
-          "email": 'hello@gokulsujan.com',
-          "title": formData.subject,
-          "message": formData.message,
-          "time": `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`,
+          'name': formData.name + ' - ' + formData.email,
+          'email': 'hello@gokulsujan.com',
+          'title': formData.subject,
+          'message': formData.message,
+          'time': `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`,
         },
         'Mpk3WVp3AgiW5BKaL'
       );

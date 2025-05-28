@@ -22,6 +22,6 @@ export const experiences: Experience[] = [
     company: 'Talent Attingal',
     startDate: 'Aug 2020',
     endDate: 'Sep 2021',
-    description: "Developed an academic management app to streamline admin tasks and enhance faculty-staff communication. Managed the institution's website and student database. Enabled remote learning during the pandemic and provided IT support to improve operational efficiency.",
+    description: 'Developed an academic management app to streamline admin tasks and enhance faculty-staff communication. Managed the institution\'s website and student database. Enabled remote learning during the pandemic and provided IT support to improve operational efficiency.',
   },
 ];

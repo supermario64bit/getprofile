@@ -19,35 +19,35 @@ export const works: Work[] = [
       'Geolocation insights - View the city and country of each visitor based on their IP address.',
     ],
     attributes: [
-        {
-          name: 'Start Date',
-          value: 'May 2025',
-        },
-        {
-          name: 'End Date',
-          value: 'May 2025',
-        },
-        {
-          name: 'Backend',
-          value: 'Golang',
-        },
-        {
-          name: 'Frontend',
-          value: 'React JS',
-        },
-        {
-          name: 'DBMS',
-          value: 'Cassandra for faster read and write',
-        },
-        {
-          name: 'Containerization',
-          value: 'Docker',
-        },
-        {
-          name: 'Hosting',
-          value: 'Local Server machine exposed using cloudflare tunnel',
-        },
-      ],
+      {
+        name: 'Start Date',
+        value: 'May 2025',
+      },
+      {
+        name: 'End Date',
+        value: 'May 2025',
+      },
+      {
+        name: 'Backend',
+        value: 'Golang',
+      },
+      {
+        name: 'Frontend',
+        value: 'React JS',
+      },
+      {
+        name: 'DBMS',
+        value: 'Cassandra for faster read and write',
+      },
+      {
+        name: 'Containerization',
+        value: 'Docker',
+      },
+      {
+        name: 'Hosting',
+        value: 'Local Server machine exposed using cloudflare tunnel',
+      },
+    ],
   },
   {
     id: 2,
@@ -66,23 +66,23 @@ export const works: Work[] = [
       'Ticket Booking System - Real-time seat availability check, Seat selection and reservation, Booking confirmation and ticket generation, Booking cancellation and refund logic',
     ],
     attributes: [
-        {
-          name: 'Start Date',
-          value: 'Sep 2023',
-        },
-        {
-          name: 'End Date',
-          value: 'Nov 2023',
-        },
-        {
-          name: 'Backend',
-          value: 'Golang',
-        },
-        {
-          name: 'DBMS',
-          value: 'Postgres and Redis(Caching)',
-        },
-      ],
+      {
+        name: 'Start Date',
+        value: 'Sep 2023',
+      },
+      {
+        name: 'End Date',
+        value: 'Nov 2023',
+      },
+      {
+        name: 'Backend',
+        value: 'Golang',
+      },
+      {
+        name: 'DBMS',
+        value: 'Postgres and Redis(Caching)',
+      },
+    ],
   },
   {
     id: 3,

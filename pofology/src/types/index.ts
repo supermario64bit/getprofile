@@ -63,6 +63,7 @@ export type Review = {
   author: {
     name: string;
     imageUrl: string;
+    linkdin: string;
     designation: string;
     company: string;
   };
