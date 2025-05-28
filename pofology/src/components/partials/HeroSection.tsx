@@ -54,7 +54,7 @@ const HeroSection = () => {
         </div>
 
         <Button className="mt-5 px-8">
-          <a href="/contact">Hire Me</a>
+          <Link href="/contact">Hire Me</Link>
         </Button>
       </div>
 

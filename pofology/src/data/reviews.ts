@@ -1,7 +1,7 @@
 import { Review } from '@/types';
 
 export const reviews: Review[] = [
-    {
+  {
     author: {
       name: 'Amal Dev',
       imageUrl: '/images/avatar/amaldev.png',
