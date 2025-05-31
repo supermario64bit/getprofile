@@ -6,8 +6,8 @@ COPY pofology/package.json pofology/yarn.lock ./
 RUN yarn install
 
 COPY pofology ./
-RUN yarn build
 RUN yarn add emailjs-com
+RUN yarn build
 
 # Stage 2: Production
 FROM node:18-slim
