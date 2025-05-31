@@ -29,8 +29,8 @@ const ContactSection = () => {
     try {
       const now = new Date();
       await emailjs.send(
-        '',
-        '',
+        'service_vvfpggf',
+        'template_ve16uxg',
         {
           'name': formData.name + ' - ' + formData.email,
           'email': 'hello@gokulsujan.com',

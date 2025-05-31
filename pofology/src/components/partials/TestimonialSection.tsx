@@ -24,8 +24,8 @@ const Testimonial = () => {
           {reviews.map((review, index) => (
             <div className="mb-6" key={index}>
               <div className="flex flex-col items-center">
-                <div className="h-24 w-24 rounded-full">
-                  <Image src={review.author.imageUrl} height={100} width={100} alt={review.author.name} />
+                <div className="relative h-24 w-24 overflow-hidden rounded-full">
+                  <Image src={review.author.imageUrl} alt={review.author.name} layout="fill" objectFit="cover" />
                 </div>
                 <h6 className="mt-3 flex items-center gap-2 text-lg font-semibold">
                   {review.author.name}
