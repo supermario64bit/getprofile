@@ -16,7 +16,11 @@ const AboutSection = () => {
             Hi, I am Gokul Sujan, I am a Software developer. I work from Trivandrum, India. I have rich experience in
             building, designing & customizing Backend Systems.
           </p>
-          <Button className="mt-5">Download CV</Button>
+          <Button className="mt-5">
+            <a href="/docs/Gokul_Sujan.pdf" download>
+              Download CV
+            </a>
+          </Button>
         </div>
 
         {/* Skills */}
