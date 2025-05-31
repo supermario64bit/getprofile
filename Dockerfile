@@ -7,6 +7,7 @@ RUN yarn install
 
 COPY pofology ./
 RUN yarn build
+RUN yarn add emailjs-com
 
 # Stage 2: Production
 FROM node:18-slim
