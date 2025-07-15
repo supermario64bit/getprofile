@@ -2,10 +2,16 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
+    jobTitle: 'Software Developer (Promoted)',
+    company: 'Leader IT Private Limited',
+    startDate: 'Jul 2025',
+    endDate: 'Present',
+    description: 'Promoted from Associate Golang Developer to Software Developer after a successful probation, based on consistent performance and versatility across technologies. Took an active role in client requirement discussions, contributing to system architecture planning and translating business needs into scalable technical solutions. Managed and assigned tasks to fellow developers based on task complexity and delivery priority, improving workflow efficiency and team productivity.',
+  },{
     jobTitle: 'Associate Golang Developer',
     company: 'Leader IT Private Limited',
     startDate: 'Jan 2025',
-    endDate: 'Present',
+    endDate: 'Jul 2025',
     description: 'Converted an open-source project into a scalable, production-ready product—Automax 3.0—customized for Middle Eastern municipalities. Added real-time incident tracking, reporting, and resolution features. Improved system performance, reliability, and user experience through cross-functional collaboration.',
   },
 

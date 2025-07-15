@@ -41,7 +41,7 @@ const HeroSection = () => {
             <FiDribbble size={25} />
             </a>
             </Link> */}
-          <Link href="https://www.github.com/gokulsujan">
+          <Link href="https://www.github.com/supermario64bit">
             <a target="_blank" className="text-gray-700 transition-colors duration-150 hover:text-primary-500">
               <FiGithub size={25} />
             </a>
